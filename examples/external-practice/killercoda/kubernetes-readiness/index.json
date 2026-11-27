@@ -1,0 +1,21 @@
+{
+  "title": "Check a Kubernetes rollout",
+  "description": "Scale and verify a workload in a temporary namespace.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Check a Kubernetes rollout",
+        "text": "exercise.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}

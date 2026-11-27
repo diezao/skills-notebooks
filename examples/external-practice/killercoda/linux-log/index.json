@@ -1,0 +1,21 @@
+{
+  "title": "Recover signals from a Linux log",
+  "description": "Use awk to extract records from a synthetic log.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Recover signals from a Linux log",
+        "text": "exercise.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
