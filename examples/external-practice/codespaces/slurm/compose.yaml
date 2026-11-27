@@ -1,0 +1,38 @@
+name: skills-lab-slurm
+services:
+  controller:
+    build: .
+    image: skills-lab-optional-slurm:local
+    networks: [practice]
+    hostname: controller
+    command: controller
+    cpus: 1
+    mem_limit: 512m
+    volumes:
+      - munge-key:/keys
+      - work:/work
+    healthcheck:
+      test: [CMD, scontrol, ping]
+      interval: 2s
+      timeout: 2s
+      retries: 25
+  worker:
+    image: skills-lab-optional-slurm:local
+    networks: [practice]
+    pull_policy: never
+    hostname: worker
+    command: worker
+    cpus: 1
+    mem_limit: 512m
+    depends_on:
+      controller:
+        condition: service_healthy
+    volumes:
+      - munge-key:/keys:ro
+      - work:/work
+networks:
+  practice:
+    internal: true
+volumes:
+  munge-key:
+  work:
